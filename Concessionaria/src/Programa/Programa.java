@@ -101,7 +101,7 @@ public class Programa {
         }
     }
 
-    // MÉTODO PARA BUSCAR E EXIBIR UM CARRO A PARTIR DA PLACA
+    // MÉTODO PARA BUSCAR E EXIBIR UM CARRO A PARTIR DA PLACA:
     
     private static void buscarEExibirCarro(Scanner scanner, List<Carro> carros) {
         if (carros.isEmpty()) {
@@ -128,7 +128,8 @@ public class Programa {
     }
 }
 
-//CLASSE CARRO COM 5 ATRIBUTOS
+//CLASSE CARRO COM 5 ATRIBUTOS:
+
 class Carro {
 	
 	private String placa;
