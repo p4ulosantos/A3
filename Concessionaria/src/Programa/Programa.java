@@ -15,18 +15,20 @@ public class Programa {
 
         // Cadastro automático de pelo menos 7 objetos
         
-        listaVeiculos.add(new Carro("ABC123", "Volkswagen", "Gol", "Preto", 2018, 4, "Manual"));
+        listaVeiculos.add(new Veiculo("ABC123", "Volkswagen", "Delivery", "Branco", 2019));
         listaVeiculos.add(new Carro("DEF456", "Ford", "Fiesta", "Prata", 2019, 4, "Automático"));
         listaVeiculos.add(new Carro("GHI789", "Chevrolet", "Onix", "Branco", 2020, 4, "Manual"));
         listaVeiculos.add(new Carro("JKL012", "Fiat", "Palio", "Vermelho", 2017, 4, "Manual"));
         listaVeiculos.add(new Carro("MNO345", "Renault", "Sandero", "Azul", 2021, 4, "Manual"));
         listaVeiculos.add(new Carro("PQR678", "Toyota", "Corolla", "Cinza", 2019, 4, "Semi-Automático"));
+        listaVeiculos.add(new Carro("PQR696", "Ferrari", "488", "Vermelho", 2020, 2, "Semi-Automático"));
         
         Scanner scanner = new Scanner(System.in);
         int opcao;
 
         do {
             exibirMenu();
+          
             opcao = scanner.nextInt();
 
             switch (opcao) {
@@ -52,12 +54,15 @@ public class Programa {
     // Exibe o menu de opções para o usuário
     
     private static void exibirMenu() {
-        System.out.println("==== MENU ====");
-        System.out.println("1. Cadastrar veículo");
-        System.out.println("2. Listar veículos");
-        System.out.println("3. Buscar veículo");
-        System.out.println("4. Sair");
+        System.out.println("=========== MENU ===========");
+        System.out.println("");
+        System.out.println("(1) Cadastrar um veículo");
+        System.out.println("(2) Listar os veículos");
+        System.out.println("(3) Buscar um veículo");
+        System.out.println("(4) Sair");
+        System.out.println("");
         System.out.print("Digite a opção desejada: ");
+      
     }
 
     // Método para cadastrar um veículo
@@ -95,7 +100,8 @@ public class Programa {
     // Método para listar os veículos cadastrados
     
     private static void listarVeiculos(List<Veiculo> listaVeiculos) {
-        if (listaVeiculos.isEmpty()) {
+       
+    	if (listaVeiculos.isEmpty()) {
             System.out.println("Nenhum veículo cadastrado.");
             return;
         }
@@ -103,7 +109,7 @@ public class Programa {
         System.out.println("==== LISTA DE VEÍCULOS ====");
         System.out.printf("%-10s%-15s%-10s\n", "Placa", "Marca", "Modelo");
         System.out.println("-----------------------------");
-
+         
         for (Veiculo veiculo : listaVeiculos) {
             System.out.printf("%-10s%-15s%-10s\n", veiculo.getPlaca(), veiculo.getMarca(), veiculo.getModelo());
         }
@@ -152,6 +158,7 @@ public class Programa {
 // Classe Veiculo com 5 atributos
 
 class Veiculo {
+	
     private String placa;
     private String marca;
     private String modelo;
@@ -166,6 +173,8 @@ class Veiculo {
         this.ano = ano;
     }
 
+    //gets e sets
+    
     public String getPlaca() {
         return placa;
     }
@@ -218,7 +227,9 @@ class Carro extends Veiculo {
         this.numeroPortas = numeroPortas;
         this.cambio = cambio;
     }
-
+    
+    //gets e sets
+   
     public int getNumeroPortas() {
         return numeroPortas;
     }
@@ -234,6 +245,5 @@ class Carro extends Veiculo {
     public void setTipoCambio(String cambio) {
         this.cambio = cambio;
     }
-    
     
 }
