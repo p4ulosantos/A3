@@ -19,6 +19,7 @@ public class Programa {
         // Cadastro automático de pelo menos 7 objetos
         
         listaVeiculos.add(new Veiculo("ABC123", "Volkswagen", "Delivery", "Branco", 2019));
+	listaVeiculos.add(new Veiculo("ABC456", "Yamaha", "NMAX", "Vermelha", 2019));
         listaVeiculos.add(new Carro("DEF456", "Ford", "Fiesta", "Prata", 2019, 4, "Automático"));
         listaVeiculos.add(new Carro("GHI789", "Chevrolet", "Onix", "Branco", 2020, 4, "Manual"));
         listaVeiculos.add(new Carro("JKL012", "Fiat", "Palio", "Vermelho", 2017, 4, "Manual"));
@@ -124,20 +125,20 @@ public class Programa {
             System.out.print("Digite o ano do veículo: ");
             int ano = scanner.nextInt();
         	
-        	System.out.print("Digite o número de portas do carro: ");
-        	int numeroPortas = scanner.nextInt();
+            System.out.print("Digite o número de portas do carro: ");
+            int numeroPortas = scanner.nextInt();
         
-        	System.out.print("Digite o tipo de câmbio do carro: ");
-        	String cambio = scanner.next();
+            System.out.print("Digite o tipo de câmbio do carro: ");
+            String cambio = scanner.next();
 
-        	// Cria um objeto Carro e adiciona na lista de veículos
+            // Cria um objeto Carro e adiciona na lista de veículos
         
-        	listaVeiculos.add(new Carro(placa, marca, modelo, cor, ano, numeroPortas, cambio));
-        	System.out.println("Veículo cadastrado com sucesso.");
+            listaVeiculos.add(new Carro(placa, marca, modelo, cor, ano, numeroPortas, cambio));
+            System.out.println("Veículo cadastrado com sucesso.");
         	
-        	break;
+            break;
         	
-        // cadastro de um novo veiculo
+        // Cadastro de um novo veiculo
         
         case 2:
         	
@@ -154,7 +155,7 @@ public class Programa {
                 }
             }
         	
-        	System.out.print("Digite a marca do veículo: ");
+            System.out.print("Digite a marca do veículo: ");
             String marcaVeiculo = scanner.nextLine();
 
             System.out.print("Digite o modelo do veículo: ");
@@ -258,7 +259,7 @@ public class Programa {
         if (veiculoEncontrado != null) {
             
     
-        	System.out.println("==== VEÍCULO ENCONTRADO ====");
+            System.out.println("==== VEÍCULO ENCONTRADO ====");
         	
             System.out.print("Deseja realmente remover este veículo? (S/N): ");
             String confirmacao = scanner.next();
