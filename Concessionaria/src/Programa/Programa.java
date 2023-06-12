@@ -12,11 +12,11 @@ public class Programa {
 	
     public static void main(String[] args) {
     	
-        // Criação da lista para armazenar os objetos
+        // Criação da lista para armazenar os veiculos
     	
         List<Veiculo> listaVeiculos = new ArrayList<>();
 
-        // Cadastro automático de pelo menos 7 objetos
+        // Cadastro automático de veiculos
         
         listaVeiculos.add(new Veiculo("ABC123", "Volkswagen", "Delivery", "Branco", 2019));
         listaVeiculos.add(new Veiculo("ABC456", "Yamaha", "NMAX", "Vermelha", 2019));
@@ -67,7 +67,7 @@ public class Programa {
 
     // Exibe o menu de opções para o usuário
     
-    public static void exibirMenu() {
+    private static void exibirMenu() {
 		
         System.out.println("=========== MENU ===========");
         System.out.println("");
