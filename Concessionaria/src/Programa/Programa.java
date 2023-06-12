@@ -19,7 +19,7 @@ public class Programa {
         // Cadastro automático de pelo menos 7 objetos
         
         listaVeiculos.add(new Veiculo("ABC123", "Volkswagen", "Delivery", "Branco", 2019));
-	listaVeiculos.add(new Veiculo("ABC456", "Yamaha", "NMAX", "Vermelha", 2019));
+        listaVeiculos.add(new Veiculo("ABC456", "Yamaha", "NMAX", "Vermelha", 2019));
         listaVeiculos.add(new Carro("DEF456", "Ford", "Fiesta", "Prata", 2019, 4, "Automático"));
         listaVeiculos.add(new Carro("GHI789", "Chevrolet", "Onix", "Branco", 2020, 4, "Manual"));
         listaVeiculos.add(new Carro("JKL012", "Fiat", "Palio", "Vermelho", 2017, 4, "Manual"));
@@ -28,41 +28,41 @@ public class Programa {
         listaVeiculos.add(new Carro("PQR696", "Ferrari", "488", "Vermelho", 2020, 2, "Semi-Automático"));
         
         Scanner scanner = new Scanner(System.in);
-        int opcao;
+        String opcao;
         
         do {
             exibirMenu();
           
-            opcao = scanner.nextInt();
+            opcao = scanner.next();
             
 
             switch (opcao) {
-                case 1:
+                case "1":
                 	
                     cadastrarVeiculo(scanner, listaVeiculos);
                     break;
                     
-                case 2:
+                case "2":
                     listarVeiculos(listaVeiculos);
                     break;
-                case 3:
+                case "3":
                     buscarEExibirVeiculo(scanner, listaVeiculos);
                     break;
                 	
-                case 4:
+                case "4":
                 	RemoverVeiculo(scanner, listaVeiculos);
                     break;
-                case 5:
+                case "5":
                 	modificarVeiculo(scanner, listaVeiculos);
                     break;
-                case 6:
+                case "6":
                     System.out.println("Saindo do programa...");
                     break;
                 default:
                     System.out.println("Opção inválida. Tente novamente.");
                     break;
             }
-        } while (opcao != 6);
+        } while (opcao != "6");
     }
 
     // Exibe o menu de opções para o usuário
@@ -86,25 +86,26 @@ public class Programa {
     
     private static void cadastrarVeiculo(Scanner scanner, List<Veiculo> listaVeiculos) {
     	
-    	int opcaoCadastro;
+    	String opcaoCadastro;
     	
     	System.out.println("O veículo que deseja cadastrar é um carro?: ");
     	System.out.println("(1) Sim");
     	System.out.println("(2) Não ");
     	System.out.println("(3) Cancelar");
     	System.out.print("Digite a opção: ");
-    	opcaoCadastro = scanner.nextInt();
+    	
+    	opcaoCadastro = scanner.next();
     	
     	
     	switch(opcaoCadastro) {
         
     	// cadastro de um novo carro
     	
-        case 1:
+        case "1":
         	
         	System.out.print("Digite a placa do veículo: ");
             String placa = scanner.next();
-            scanner.nextLine(); // Limpar o buffer do scanner
+            scanner.nextLine();
             
             for (Veiculo veiculo : listaVeiculos) {
                 if (veiculo.getPlaca().equals(placa)) {
@@ -131,7 +132,7 @@ public class Programa {
             System.out.print("Digite o tipo de câmbio do carro: ");
             String cambio = scanner.next();
 
-            // Cria um objeto Carro e adiciona na lista de veículos
+            // Cria um objeto do tipo Carro e adiciona na lista de veículos
         
             listaVeiculos.add(new Carro(placa, marca, modelo, cor, ano, numeroPortas, cambio));
             System.out.println("Veículo cadastrado com sucesso.");
@@ -140,13 +141,13 @@ public class Programa {
         	
         // Cadastro de um novo veiculo
         
-        case 2:
+        case "2":
         	
         	// Cria um objeto e adiciona na lista de veículos
         	
         	System.out.print("Digite a placa do veículo: ");
             String placaVeiculo = scanner.next();
-            scanner.nextLine(); // Limpar o buffer do scanner
+            scanner.nextLine(); 
             
             for (Veiculo veiculo : listaVeiculos) {
                 if (veiculo.getPlaca().equals(placaVeiculo)) {
@@ -190,6 +191,7 @@ public class Programa {
         }
 
     	// Ordena a lista de veículos pelo ano em ordem crescente
+    	
         Collections.sort(listaVeiculos, (v1, v2) -> Integer.compare(v1.getAno(), v2.getAno()));
 
         System.out.println("==== LISTA DE VEÍCULOS ORDENADOS PELO ANO ====");
@@ -204,7 +206,8 @@ public class Programa {
     // Método para buscar e exibir um veículo a partir da placa
     
     private static void buscarEExibirVeiculo(Scanner scanner, List<Veiculo> listaVeiculos) {
-        if (listaVeiculos.isEmpty()) {
+        
+    	if (listaVeiculos.isEmpty()) {
             System.out.println("Nenhum veículo cadastrado.");
             return;
         }
@@ -240,11 +243,11 @@ public class Programa {
         System.out.println("Veículo não encontrado.");
     }
     
-    
     //Busca e remove o veiculo a partir de sua placa
     
     private static void RemoverVeiculo(Scanner scanner, List<Veiculo> listaVeiculos) {
-        System.out.print("Digite a placa do veículo a ser removido: ");
+        
+    	System.out.print("Digite a placa do veículo a ser removido: ");
         String placaRemocao = scanner.next();
 
         Veiculo veiculoEncontrado = null;
@@ -305,18 +308,18 @@ public class Programa {
             System.out.println("(7) Modificar o tipo de câmbio");
             System.out.println("(8) Não modificar atributos");
             System.out.print("Digite a opção desejada: ");
-            int opcaoModificar = scanner.nextInt();
+            String opcaoModificar = scanner.next();
             
             switch (opcaoModificar) {
             
-            case 1:
+            case "1":
             	System.out.print("Digite a nova placa do veículo: ");
                 String placa = scanner.next();
                 veiculoEncontrado.setPlaca(placa);
                 
                 break;
                 
-            case 2:
+            case "2":
             	
             	System.out.print("Digite a nova marca do veículo: ");
                 String marca = scanner.next();
@@ -324,7 +327,7 @@ public class Programa {
                 
                 break;
                 
-            case 3:
+            case "3":
             	
             	System.out.print("Digite o novo modelo do veículo: ");
                 String modelo = scanner.next();
@@ -332,7 +335,7 @@ public class Programa {
                 
                 break;
                 
-            case 4:
+            case "4":
             	
             	System.out.print("Digite a nova cor do veículo: ");
                 String cor = scanner.next();
@@ -340,7 +343,7 @@ public class Programa {
                 
                 break;
                 
-            case 5:
+            case "5":
             	
             	System.out.print("Digite o novo ano do veículo: ");
                 int ano = scanner.nextInt();
@@ -348,7 +351,7 @@ public class Programa {
                 
                 break;
                 
-            case 6:
+            case "6":
             	
             	if (veiculoEncontrado instanceof Carro) {
             		
@@ -370,7 +373,7 @@ public class Programa {
             	               
                 break;
             
-            case 7:
+            case "7":
             	
             	if (veiculoEncontrado instanceof Carro) {
             		
@@ -392,7 +395,7 @@ public class Programa {
                 
                 break;
                 
-            case 8:
+            case "8":
             	
                 break; // Não faz nada, mantém os atributos atuais do carro
             default:
