@@ -1,5 +1,7 @@
 package Programa;
 
+//classe pai veiculo
+
 class Veiculo {
 	
     private String placa;
@@ -16,7 +18,7 @@ class Veiculo {
         this.ano = ano;
     }
 
-    //gets e sets
+  
     
     public String getPlaca() {
         return placa;

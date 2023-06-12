@@ -71,12 +71,12 @@ public class Programa {
 		
         System.out.println("=========== MENU ===========");
         System.out.println("");
-        System.out.println("(1) Cadastrar um veículo");
-        System.out.println("(2) Listar os veículos");
-        System.out.println("(3) Buscar um veículo");
-        System.out.println("(4) Remover um veículo");
-        System.out.println("(5) Modificar um veículo");     
-        System.out.println("(6) Sair");
+        System.out.println("1 - Cadastrar um veículo");
+        System.out.println("2 - Listar os veículos");
+        System.out.println("3 - Buscar um veículo");
+        System.out.println("4 - Remover um veículo");
+        System.out.println("5 - Modificar um veículo");     
+        System.out.println("6 - Sair");
         System.out.println("");
         System.out.print("Digite a opção desejada: ");
       
@@ -89,9 +89,9 @@ public class Programa {
     	String opcaoCadastro;
     	
     	System.out.println("O veículo que deseja cadastrar é um carro?: ");
-    	System.out.println("(1) Sim");
-    	System.out.println("(2) Não ");
-    	System.out.println("(3) Cancelar");
+    	System.out.println("1 - Sim");
+    	System.out.println("2 - Não ");
+    	System.out.println("3 - Cancelar");
     	System.out.print("Digite a opção: ");
     	
     	opcaoCadastro = scanner.next();
@@ -220,7 +220,7 @@ public class Programa {
         for (Veiculo veiculo : listaVeiculos) {
         	
             if (veiculo.getPlaca().equals(placaBusca)) {
-                System.out.println("==== VEÍCULO ENCONTRADO ====");
+                System.out.println("==== VEÍCULO ENCONTRADO =====");
                 System.out.println("Placa: " + veiculo.getPlaca());
                 System.out.println("Marca: " + veiculo.getMarca());
                 System.out.println("Modelo: " + veiculo.getModelo());
@@ -299,14 +299,14 @@ public class Programa {
         	
             System.out.println("==== VEÍCULO ENCONTRADO ====");
             
-            System.out.println("(1) Modificar a placa");
-            System.out.println("(2) Modificar a marca");
-            System.out.println("(3) Modificar o modelo");
-            System.out.println("(4) Modificar a cor");
-            System.out.println("(5) Modificar o ano");
-            System.out.println("(6) Modificar a quantidade de portas");
-            System.out.println("(7) Modificar o tipo de câmbio");
-            System.out.println("(8) Não modificar atributos");
+            System.out.println("1 - Modifica a placa");
+            System.out.println("2 - Modificar a marca");
+            System.out.println("3 - Modificar o modelo");
+            System.out.println("4  - Modificar a cor");
+            System.out.println("5 - Modificar o ano");
+            System.out.println("6 - Modificar a quantidade de portas");
+            System.out.println("7 - Modificar o tipo de câmbio");
+            System.out.println("8 - Não modificar atributos");
             System.out.print("Digite a opção desejada: ");
             String opcaoModificar = scanner.next();
             
@@ -399,7 +399,7 @@ public class Programa {
             	
                 break; // Não faz nada, mantém os atributos atuais do carro
             default:
-                System.out.println("Opção inválida. Não serão realizadas modificações adicionais.");
+                System.out.println("Opção inválida.");
                 break;
            
             }

@@ -13,7 +13,7 @@ class Carro extends Veiculo {
 	     this.cambio = cambio;
 	 }
 	 
-	 //gets e sets
+	
 	
 	 public int getNumeroPortas() {
 	     return numeroPortas;
