@@ -1,0 +1,7 @@
+veiculo.getPlaca().equals(placa)
+
+confirmacao.equalsIgnoreCase("S")
+
+ Veiculo veiculoEncontrado = null;
+
+ Collections.sort(listaVeiculos, (v1, v2) -> Integer.compare(v1.getAno(), v2.getAno()));
