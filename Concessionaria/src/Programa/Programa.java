@@ -339,7 +339,7 @@ public class Programa {
             	
             	System.out.print("Digite a nova cor do veículo: ");
                 String cor = scanner.next();
-                veiculoEncontrado.setModelo(cor);
+                veiculoEncontrado.setCor(cor);
                 
                 break;
                 
